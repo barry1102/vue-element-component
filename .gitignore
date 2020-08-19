@@ -1,0 +1,19 @@
+.DS_Store
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.history/
+src/i18n/*shop.js
+src/i18n/*.txt
+src/util/debug_config.js
+*/dev.env*

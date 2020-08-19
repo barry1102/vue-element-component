@@ -1,0 +1,22 @@
+{
+  "name": "date-time-barry",
+  "version": "1.0.0",
+  "description": " a vue\u001b[D\u001b[V\u001b[C\u001b[C component which is for timeSelect",
+  "main": "data-time.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barry1102/vue-element-component.git"
+  },
+  "author": "谭友强",
+  "license": "ISC",
+  "dependencies": {
+  	"data-time":"^0.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/barry1102/vue-element-component/issues"
+  },
+  "homepage": "https://github.com/barry1102/vue-element-component#readme"
+}
