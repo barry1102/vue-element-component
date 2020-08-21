@@ -1,7 +1,7 @@
 {
   "name": "date-time1102",
-  "version": "1.0.4",
-  "description": " a vue\u001b[D\u001b[V\u001b[C\u001b[C component which is for timeSelect",
+  "version": "1.0.6",
+  "description": "基于element datePicker开发的二次组件",
   "main": "data-time.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,14 @@
     "type": "git",
     "url": "git+https://github.com/barry1102/vue-element-component.git"
   },
+  "dependencies": {
+    "vue": "^2.6.11",
+    "moment": "^2.24.0"
+  },
+  "keywords": [
+    "dateRange",
+    "dateTime"
+  ],
   "author": "谭友强",
   "license": "ISC",
   "bugs": {

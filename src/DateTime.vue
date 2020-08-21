@@ -5,29 +5,28 @@
 <template>
   <div>
     <el-date-picker
-      v-model="dateRange"
-      :type="type"
-      value-format="yyyy-MM-dd HH:mm:ss"
-      :clearable="false"
-      :picker-options="pickerOptions"
-      popper-class="wms-date-popper"
-      size="small"
-      :default-time="['00:00:00', '23:59:59']"
-      unlink-panels
-      :start-placeholder="$t('time.startTime')"
-      :end-placeholder="$t('time.endTime')"
-      :range-separator="$t('time.to')"
-      @change="handleDateChange">
+        v-model="dateRange"
+        :type="type"
+        value-format="yyyy-MM-dd HH:mm:ss"
+        :clearable="false"
+        :picker-options="pickerOptions"
+        popper-class="wms-date-popper"
+        size="small"
+        :default-time="['00:00:00', '23:59:59']"
+        unlink-panels
+        :start-placeholder="$t('time.startTime')"
+        :end-placeholder="$t('time.endTime')"
+        :range-separator="$t('time.to')"
+        @change="handleDateChange">
     </el-date-picker>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import func from './index.js'
-Vue.use(func)
+import moment from 'moment';
+
 export default {
-  name: "date-time",
+  name: "DateTime",
   props: {
     value: {},
     type: {
@@ -46,22 +45,22 @@ export default {
   data() {
     return {
       dateRange: [],
-      defaultTimeRange:[
-        this.wmsOtherTime(new Date(), {month: -1, format: 'YYYY-MM-DD 00:00:00'}),
-        this.wmsOtherTime(new Date(), {format: 'YYYY-MM-DD 23:59:59'})
+      defaultTimeRange: [
+        moment().subtract(1, 'months').format( 'YYYY-MM-DD 00:00:00'),
+        moment().format( 'YYYY-MM-DD 00:00:00'),
       ],
       pickerOptions: {
         shortcuts: [
           {
-            text: this.$t('time.recentWeek'),
+            text: '最近一周',
             onClick: this.formatWeekPicker
           },
           {
-            text: this.$t('time.recentMonth'),
+            text: '最近一个月',
             onClick: this.formatMonthPicker
           },
           {
-            text: this.$t('time.recentThreeMonth'),
+            text: '最近三个月',
             onClick: this.formatThreeWeekPicker
           },
           this.showRecentYear ? {
@@ -74,7 +73,7 @@ export default {
   },
   watch: {
     value: {
-      immediate:true,
+      immediate: true,
       handler(value) {
         this.dateRange = value;
       }
